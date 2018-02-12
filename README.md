@@ -168,3 +168,67 @@ gem 'pg'
 
 $ bundle install
 ```
+
+```
+development:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: postgresql_development
+  username: postgresql
+  password: 
+  host: localhost
+  port: 5432
+```
+
+---
+
+# Docker
+
+## コンテナ作成
+
+https://hub.docker.com/_/postgres/
+
+```
+# sample
+$ docker run --name some-app --link some-postgres:postgres -d application-that-uses-postgres
+
+# postgres コンテナ作成
+$ docker run --name postgres -e POSTGRES_PASSWORD=test -p 5432:5432 postgres
+```
+
+## データベース作成
+
+http://www.kakiro-web.com/postgresql/postgresql-create-user.html
+
+```
+# データベース接続
+$ psql -h localhost -U postgres 
+
+# データベース作成
+postgres=# create database test_database01;
+
+# テーブル一覧
+postgres=# \d
+```
+
+## select専用ユーザ作成
+
+```
+# データベース接続
+$ psql -h localhost -U postgres -d test_database01
+
+# ユーザ作成
+postgres=# CREATE ROLE user01 LOGIN PASSWORD 'test';
+
+# select権限の追加
+postgres=# GRANT select ON users TO user01;
+postgres=# GRANT select ON schema_migrations TO user01;
+
+# データベース接続ユーザの一覧
+postgres=# SELECT * FROM pg_authid;
+postgres=# \du
+
+# テーブル一覧
+postgres=# \dp
+```
