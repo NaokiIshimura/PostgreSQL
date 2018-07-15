@@ -11,6 +11,16 @@ $ psql -U ユーザ名 -d データベース名
 $ psql -h ホスト名 -U ユーザ名 -d データベース名
 ```
 
+## URL
+
+```
+# SSL
+postgres://<user>:<password>@<host>:<port>/<database>
+
+# SSL Disable
+postgres://<user>:<password>@<host>:<port>/<database>?sslmode=disable
+```
+
 ---
 
 # postgresユーザ
