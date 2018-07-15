@@ -202,9 +202,17 @@ https://hub.docker.com/_/postgres/
 ```
 # sample
 $ docker run --name some-app --link some-postgres:postgres -d application-that-uses-postgres
+```
 
+```
 # postgres コンテナ作成
 $ docker run --name postgres -e POSTGRES_PASSWORD=test -p 5432:5432 postgres
+
+# コンテナへログイン
+$ docker exec -ti postgres bash
+
+# URL
+postgres://postgres:test@xxx.xxx.xxx.xxx:5432/postgres?sslmode=disable
 ```
 
 ## データベース作成
