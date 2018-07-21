@@ -215,6 +215,19 @@ $ docker exec -ti postgres bash
 postgres://postgres:test@xxx.xxx.xxx.xxx:5432/postgres?sslmode=disable
 ```
 
+```
+# config/database.yml
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: utf8
+  database: postgres
+  username: postgres
+  password: test
+  host: localhost
+  port: 5432
+```
+
 ## データベース作成
 
 http://www.kakiro-web.com/postgresql/postgresql-create-user.html
