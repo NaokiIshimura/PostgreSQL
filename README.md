@@ -183,10 +183,10 @@ $ bundle install
 development:
   <<: *default
   adapter: postgresql
-  encoding: unicode
-  database: postgresql_development
-  username: postgresql
-  password: 
+  encoding: utf8
+  database: postgres
+  username: postgres
+  password: test
   host: localhost
   port: 5432
 ```
