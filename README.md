@@ -180,7 +180,7 @@ $ bundle install
 ```
 
 ```
-development:
+production:
   <<: *default
   adapter: postgresql
   encoding: utf8
