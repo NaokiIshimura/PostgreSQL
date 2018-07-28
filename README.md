@@ -266,6 +266,8 @@ postgres=# \dp
 
 ## GRANT ALLユーザ作成
 
+https://blog.longkey1.net/2013/02/13/how-to-grant-access-to-all-tables-of-a-database-in-postgres/
+
 ```
 # スキーマを確認
 postgres=# \d
@@ -281,7 +283,6 @@ postgres=# \d
 postgres=# CREATE ROLE user01 LOGIN PASSWORD 'test';
 
 # 権限を追加
-# https://blog.longkey1.net/2013/02/13/how-to-grant-access-to-all-tables-of-a-database-in-postgres/
 postgres=# GRANT ALL ON ALL TABLES IN SCHEMA public TO user01;
 postgres=# GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO user01;
 postgres=# GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO user01;
