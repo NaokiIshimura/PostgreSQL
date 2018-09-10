@@ -118,6 +118,13 @@ ORDER BY
     ordinal_position;
 ```
 
+## pager
+
+```
+\pset pager off
+\pset pager on
+```
+
 ---
 
 # 導入
