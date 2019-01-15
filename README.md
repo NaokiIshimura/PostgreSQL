@@ -235,6 +235,20 @@ production:
   port: 5432
 ```
 
+以下のエラーが発生する場合、
+
+```
+psql: FATAL:  role "xxx" does not exist
+```
+
+ローカルで起動しているPostgreSQLの停止
+https://qiita.com/ryo2132/items/7f4b1fed9cba7b2850af
+
+
+```
+$ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+```
+
 ## データベース作成
 
 http://www.kakiro-web.com/postgresql/postgresql-create-user.html
